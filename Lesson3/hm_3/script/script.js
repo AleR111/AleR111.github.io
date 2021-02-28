@@ -1,4 +1,4 @@
-// 'use strict'
+'use strict'
 
 // 1
 
@@ -10,28 +10,6 @@ while (i <= 100) {
     } else if (i !== 1 && i % 2 !== 0 && i % 3 !== 0 && i % 5 !== 0 && i % 7 !== 0) console.log(i);
     ++i;
 }
-
-// или так
-// let n = 100;
-// let i = 2;
-//
-// while (i <= n) {
-//
-//     let count = 0;
-//     for (let j = 1; j <= n; j++) {
-//
-//         if (i % j === 0) {
-//             ++count;
-//         }
-//         if (count > 2) {
-//             break;
-//         } else if (j < n) continue;
-//         console.log(i)
-//
-//     }
-//     ++i;
-//
-// }
 
 // 2
 
