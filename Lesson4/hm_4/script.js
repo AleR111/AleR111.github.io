@@ -2,19 +2,60 @@
 
 function getObjectNumbers(number) {
 
-    const objectNumbers = {}
-    if (number > 999 || number < 0) return console.log('Введите число от 0 до 999'), objectNumbers
+    const objectNumbers = {
+        единицы: null,
+        десятки: null,
+        сотни: null,
+    }
+    if (number > 999 || number < 0) return console.log('Введите число от 0 до 999'), {}
     let numberStr = number.toString()
-    if (numberStr.length === 2) numberStr = '0' + numberStr;
-    if (numberStr.length === 1) numberStr = '00' + numberStr;
-    if (numberStr.length === 0) numberStr = '000';
-    objectNumbers['единицы'] = +numberStr[2]
-    objectNumbers['десятки'] = +numberStr[1]
-    objectNumbers['сотни'] = +numberStr[0]
+
+    let i = numberStr.length - 1
+    for (const prop in objectNumbers) {
+        if (numberStr[i] === undefined) {
+            objectNumbers[prop] = 0
+        } else objectNumbers[prop] = +numberStr[i]
+        --i
+    }
 
     return objectNumbers
 
 }
 
-let check = getObjectNumbers(2)
+let check = getObjectNumbers(277)
 console.log(check)
+
+// 2
+
+let goodsCart = [
+    {
+        vendorCode: 'item1',
+        cost: 100,
+        count: 1
+    },
+    {
+        vendorCode: 'item12',
+        cost: 400,
+        count: 2
+    },
+    {
+        vendorCode: 'item132',
+        cost: 150,
+        count: 1
+    },
+    {
+        vendorCode: 'item5',
+        cost: 15,
+        count: 10
+    }
+];
+
+let countBasketPrice = goodsCart.reduce((totalCost, costItem) => {
+    return totalCost += costItem.cost * costItem.count
+}, 0)
+
+
+console.log(countBasketPrice)
+
+
+
