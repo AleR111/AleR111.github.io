@@ -27,35 +27,39 @@ console.log(check)
 
 // 2
 
-let goodsCart = [
-    {
-        vendorCode: 'item1',
-        cost: 100,
-        count: 1
-    },
-    {
-        vendorCode: 'item12',
-        cost: 400,
-        count: 2
-    },
-    {
-        vendorCode: 'item132',
-        cost: 150,
-        count: 1
-    },
-    {
-        vendorCode: 'item5',
-        cost: 15,
-        count: 10
+let goodsCart = {
+
+    goods: [
+        {
+            vendorCode: 'item1',
+            cost: 100,
+            count: 1
+        },
+        {
+            vendorCode: 'item12',
+            cost: 400,
+            count: 2
+        },
+        {
+            vendorCode: 'item132',
+            cost: 150,
+            count: 1
+        },
+        {
+            vendorCode: 'item5',
+            cost: 15,
+            count: 10
+        }
+    ],
+
+    countBasketPrice() {
+        return this.goods.reduce((totalCost, costItem) =>
+             totalCost += costItem.cost * costItem.count
+        , 0)
     }
-];
+};
 
-let countBasketPrice = goodsCart.reduce((totalCost, costItem) => {
-    return totalCost += costItem.cost * costItem.count
-}, 0)
-
-
-console.log(countBasketPrice)
+console.log(goodsCart.countBasketPrice())
 
 
 
