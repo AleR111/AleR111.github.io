@@ -68,6 +68,12 @@ const goodsCart = {
 
     goods: [],
 
+    countBasketPrice() {
+        return this.goods.reduce((totalCost, costItem) =>
+                totalCost += costItem.cost * 1
+            , 0)
+    },
+
 };
 
 const addGoods = {
@@ -78,6 +84,7 @@ const addGoods = {
     addGood(i) {
         this.buttonNum = i;
         this.goodsCart.goods.push(this.catalog.goods[this.buttonNum])
+        console.log(goodsCart.countBasketPrice())
     },
 
     clickButtonAddGood() {
@@ -87,8 +94,7 @@ const addGoods = {
             buttonClicked[i].onclick = () => this.addGood(i)
         }
 
-    }
-
+    },
 
 }
 
