@@ -6,8 +6,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hm_6</title>
     <script src="catalog.js" defer></script>
+    <style>
+
+        a {
+            text-decoration: none;
+            color: #531a3d;
+        }
+
+        .header {
+            height: 100px;
+            background-color: #d0c188;
+            padding: 24px;
+            box-sizing: border-box;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+        }
+
+        .heading {
+            padding-right: 8px;
+        }
+
+        #catalog {
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        #cart {
+            display: none;
+            width: 400px;
+            /*height: 100vh;*/
+            background-color: rgb(217, 216, 183);
+            position: absolute;
+            right: 0;
+            top: 100px;
+        }
+
+        #cart_btn {
+            display: none;
+        }
+
+        #cart_btn:checked ~ #cart{
+            display: block;
+        }
+
+
+        .cart_butt {
+            color: #531a3d;
+        }
+
+        .cart_butt:hover {
+            cursor: pointer;
+        }
+
+
+
+        .good {
+            border: 1px solid #888888;
+            padding: 16px;
+            width: 300px;
+        }
+
+        .good_prop {
+            padding-bottom: 8px;
+        }
+
+
+    </style>
 </head>
 <body>
+<header class="header"><a href="#">Catalog</a>
+    <input id="cart_btn" type="checkbox">
+    <label class="cart_butt" for="cart_btn">Cart</label>
+    <div id="cart"></div>
+</header>
+<div id="catalog"></div>
 
 </body>
 </html>
