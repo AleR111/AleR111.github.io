@@ -34,6 +34,8 @@
         }
 
         #catalog {
+            max-width: 1140px;
+            margin: 0 auto;
             justify-content: center;
             display: flex;
             flex-wrap: wrap;
@@ -41,10 +43,14 @@
         }
 
         #cart {
+            min-width: 366px;
+            max-height: 500px;
+            overflow: scroll;
             display: none;
-            width: 400px;
-            /*height: 100vh;*/
-            background-color: rgb(217, 216, 183);
+            padding: 16px;
+            gap: 16px;
+            flex-direction: column;
+            background-color: #eff2f2;
             position: absolute;
             right: 0;
             top: 100px;
@@ -55,7 +61,7 @@
         }
 
         #cart_btn:checked ~ #cart{
-            display: block;
+            display: flex;
         }
 
 
