@@ -4,7 +4,7 @@ const settings = {
   rowsCount: 21,
   colsCount: 21,
   speed: 2,
-  winFoodCount: 50,
+  winFoodCount: 20,
 };
 
 const config = {
@@ -226,8 +226,19 @@ const game = {
 
     this.map.init(this.config.getRowsCount(), this.config.getColsCount());
 
+    //hm//
+
+    this.winScore();
+
     this.setEventHandlers();
     this.reset();
+  },
+
+    //hm//
+
+  winScore() {
+      const winScore = document.getElementById('win-score');
+      winScore.innerText = `${this.config.getWinFoodCount()}`
   },
 
   setEventHandlers() {
@@ -355,6 +366,11 @@ const game = {
 
     if (this.food.isOnPoint(this.snake.getNextStepHeadPoint())) {
       this.snake.growUp();
+
+      ///// hm score
+
+      this.getScore()
+
       this.food.setCoordinates(this.getRandomFreeCoordinates());
 
       if (this.isGameWon()) this.finish();
@@ -363,6 +379,15 @@ const game = {
     this.snake.makeStep();
     this.render();
   },
+
+     // hm
+
+  getScore() {
+    const score = this.snake.body.length - 1;
+    const playerScore = document.getElementById('player-score');
+    playerScore.innerText = `${score}`;
+  },
+
 
   canMakeStep() {
     const nextStepPoint = this.snake.getNextStepHeadPoint();

@@ -1,9 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 0;
     background: #2e353d;
 }
-.menuButton{
+
+.menuButton {
     width: 150px;
     padding: 15px;
     margin: 10px;
@@ -12,35 +13,73 @@
     text-align: center;
     cursor: pointer;
 }
-.menuButton:hover{
+
+.menuButton:hover {
     background: #009641;
 }
-#game{
+
+#game {
     border-collapse: collapse;
-    margin: 2% auto 0;
 }
-#menu{
+
+#game-wrap {
+    padding-top: 16px;
     display: flex;
     justify-content: center;
 }
-td.cell{
+
+#menu {
+    display: flex;
+    justify-content: center;
+}
+
+td.cell {
     width: 20px;
     height: 20px;
     border: 1px dotted #eee;
     border-collapse: collapse;
 }
-.food{
+
+.food {
     background: #00d021;
 }
-.snakeBody{
+
+.snakeBody {
     background: #e5e5e5;
 }
-.snakeHead{
+
+.snakeHead {
     background: #9b0013;
 }
+
 .disabled {
     background: #7c7c7c;
 }
-.disabled:hover{
+
+.disabled:hover {
     background: #7c7c7c;
+}
+
+/*hm*/
+
+.game_score {
+    /*position: absolute;*/
+    /*margin-left: 8%;*/
+    /*padding: 8px;*/
+
+}
+
+.game_score-text {
+    color: #fff;
+    position: absolute;
+    margin-left: 8%;
+    padding: 8px;
+    background-color: #8f7e02;
+    border-radius: 5px;
+}
+
+.game_score-num {
+    background-color: #5e1313;
+    padding: 2px;
+    border-radius: 5px;
 }
