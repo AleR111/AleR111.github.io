@@ -44,6 +44,12 @@ td.cell {
     background: #00d021;
 }
 
+/*hm*/
+
+.obstacle {
+    background: #96370b;
+}
+
 .snakeBody {
     background: #e5e5e5;
 }
