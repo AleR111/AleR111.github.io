@@ -192,11 +192,46 @@
   //         return a + b;
   //     };
   // }
-  //
-  // const addTwo = sum(10);
-  // // console.dir(addTwo);
-  // // console.log(addTwo(5));
-  // console.log(sum(10)(5));
+  // let q = 0
+  
+  function sum1(a) {
+
+      let total = 0
+      total += a
+
+      function amount(a) {
+          if(a === undefined) return total
+          total += a
+
+          return amount
+
+      }
+
+      return amount;
+
+  }
+
+  console.log(sum1(10)(5)(12)(2)());
+
+  function sum2(a) {
+
+      let total = 0
+      total += a
+
+      function amount(a) {
+          total += a
+          return amount
+      }
+
+      amount.toString = function() {
+          return total;
+      };
+
+      return amount;
+
+  }
+
+  console.log(sum2(10)(5)(12)(2));
 
   // console.log(sum(a)(b)(c)...(n)()); // => вывелась общая сумма
   // console.log(sum(a)(b)(c)...(n)); // => вывелась общая сумма
